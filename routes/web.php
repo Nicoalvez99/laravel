@@ -22,7 +22,7 @@ Route::view('/', 'home')->name('home');
 //donde el primer parametro de view es la url y  el segundo es la vista, donde el name es home.
 Route::view('/about', 'about')->name('about');
 
-//Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
+Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
 
 Route::view('/contacto', 'contacto')->name('contacto');
 

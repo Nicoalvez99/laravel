@@ -28,3 +28,5 @@ Route::view('/contacto', 'contacto')->name('contacto');
 
 Route::resource('proyectos', 'PortfolioController');
 
+Route::post('contacto', 'MensajeController@store');
+

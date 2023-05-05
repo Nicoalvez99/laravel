@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('home');
-});*/
 
 //Otra forma de realizar las vistas y mejor es:
 Route::view('/', 'home')->name('home');
 //donde el primer parametro de view es la url y  el segundo es la vista, donde el name es home.
 Route::view('/about', 'about')->name('about');
 
-Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
+Route::get('/portfolio', 'PortfolioControlador@index')->name('portfolio');
+Route::resource('proyectos', 'PortfolioControlador');
 
 Route::view('/contacto', 'contacto')->name('contacto');
-
-Route::resource('proyectos', 'PortfolioController');
-
 Route::post('contacto', 'MensajeController@store');
+
+
+
 

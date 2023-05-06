@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\PortfolioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,11 +21,12 @@ Route::view('/', 'home')->name('home');
 //donde el primer parametro de view es la url y  el segundo es la vista, donde el name es home.
 Route::view('/about', 'about')->name('about');
 
-Route::get('/portfolio', 'PortfolioControlador@index')->name('portfolio');
-Route::resource('proyectos', 'PortfolioControlador');
+Route::get('/portfolio', PortfolioController::class)->name('portfolio');
+//Route::resource('proyectos', 'PortfolioControlador');
 
+Route::post('contacto', MensajeController::class, 'store');
 Route::view('/contacto', 'contacto')->name('contacto');
-Route::post('contacto', 'MensajeController@store');
+
 
 
 

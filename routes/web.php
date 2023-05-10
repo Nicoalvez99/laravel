@@ -24,7 +24,7 @@ Route::view('/about', 'about')->name('about');
 Route::get('/portfolio', PortfolioController::class)->name('portfolio');
 //Route::resource('proyectos', 'PortfolioControlador');
 
-Route::post('contacto', MensajeController::class, 'store');
+Route::post('contacto', [MensajeController::class, 'store']);
 Route::view('/contacto', 'contacto')->name('contacto');
 
 

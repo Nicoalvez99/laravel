@@ -20,16 +20,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link {{ setActive('home') }}" aria-current="page" href="/">Home</a>
+                            <a class="nav-link {{ setActive('home') }}" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ setActive('about') }}" href="/about">About</a>
+                            <a class="nav-link {{ setActive('about') }}" href="{{ route('about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ setActive('portfolio') }}" href="/portfolio">Portfolio</a>
+                            <a class="nav-link {{ setActive('projects.index') }}" href="{{ route('projects.index') }}">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ setActive('contacto') }}" href="/contacto">Contacto</a>
+                            <a class="nav-link {{ setActive('contacto') }}" href="{{ route('contacto') }}">Contacto</a>
                         </li>
                     </ul>
                 </div>

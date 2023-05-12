@@ -8,12 +8,21 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         return view('portfolio', [
             "projects" => Project::get()
         ]);
     }
+
+    public function show($id){
+
+        return view('projects.show', [
+            'project' => Project::findOrFail($id)
+        ]);
+    }
+    
+
 
     
 }

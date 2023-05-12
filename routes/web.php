@@ -21,7 +21,7 @@ Route::view('/', 'home')->name('home');
 //donde el primer parametro de view es la url y  el segundo es la vista, donde el name es home.
 Route::view('/about', 'about')->name('about');
 
-Route::get('/portfolio', PortfolioController::class)->name('portfolio');
+Route::get('/portfolio', PortfolioController::class)->name('projects');
 //Route::resource('proyectos', 'PortfolioControlador');
 
 Route::post('contacto', [MensajeController::class, 'store']);

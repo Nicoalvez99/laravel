@@ -36,7 +36,26 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index');
     }
+
+    public function edit($id){
+
+        return view('projects.edit', [
+            'project' => Project::findOrFail($id)
+        ]);
+    }
     
+    public function update(){
+
+        Project::create([
+            'title' => request('title'),
+            'url' => request('url'),
+            'description' => request('description')
+        ]);
+
+        //minuto 1:58
+
+        return redirect()->route('projects.index');
+    }
 
 
     

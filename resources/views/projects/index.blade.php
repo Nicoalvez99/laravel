@@ -6,7 +6,10 @@
 <h1>Portfolio</h1>
 <button type="button" class="btn btn-danger"><a href="{{ route('projects.create') }}">Nuevo proyecto</a></button>
 @foreach($projects as $project)
-    <p><a href="{{ route('projects.show', $project->id) }}">{{ $project->title }}</a></p>
+    <div class="d-flex">
+        <p><a href="{{ route('projects.show', $project->id) }}">{{ $project->title }}</a></p>
+        <a href="{{ route('projects.edit', $project->id) }}"> Editar</a>
+    </div>
 @endforeach
 
 @endsection

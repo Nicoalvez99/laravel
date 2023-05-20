@@ -4,6 +4,8 @@
 @section('content')
 
 <h1>Portfolio</h1>
+@include('partials.session-status')
+
 <button type="button" class="btn btn-danger"><a href="{{ route('projects.create') }}">Nuevo proyecto</a></button>
 @foreach($projects as $project)
     <div class="d-flex">

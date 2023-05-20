@@ -5,6 +5,8 @@
 @section('content')
 
 <h1>Contacto</h1>
+
+@include('partials.session-status')
 <div class="row">
     <div class="col-4">
         <form method="post" action="{{ route('contacto') }}">
@@ -21,5 +23,6 @@
         </form>
     </div>
 </div>
+
 
 @endsection

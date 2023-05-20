@@ -8,7 +8,7 @@
 @foreach($projects as $project)
     <div class="d-flex">
         <p><a href="{{ route('projects.show', $project->id) }}">{{ $project->title }}</a></p>
-        <a href="{{ route('projects.edit', $project->id) }}"> Editar</a>
+        <a href="{{ route('projects.edit', $project) }}"> Editar</a>
     </div>
 @endforeach
 

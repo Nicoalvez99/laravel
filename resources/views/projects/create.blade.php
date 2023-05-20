@@ -4,6 +4,13 @@
 @section('content')
 
 <h1>Crear nuevo proyecto</h1>
+@if($errors->any())
+<ul>
+    @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+@endif
 <div class="row">
     <form action="{{ route('projects.store') }}" method="post">
         @csrf

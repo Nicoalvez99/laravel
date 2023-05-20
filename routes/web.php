@@ -25,9 +25,9 @@ Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.in
 Route::get('/portfolio/crear', [ProjectController::class, 'create'])->name('projects.create');
 Route::post('/portfolio', [ProjectController::class, 'store'])->name('projects.store');
 
-Route::get('/portfolio/{id}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::get('/portfolio/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
 Route::get('/portfolio/{id}', [ProjectController::class, 'show'])->name('projects.show');
-Route::patch('/portfolio/{id}', [ProjectController::class, 'update'])->name('projects.update');
+Route::patch('/portfolio/{project}', [ProjectController::class, 'update'])->name('projects.update');
 
 
 

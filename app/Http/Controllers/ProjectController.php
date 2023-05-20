@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SaveProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -26,13 +27,9 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store(){
+    public function store(SaveProjectRequest $request){
         
-        Project::create([
-            'title' => request('title'),
-            'url' => request('url'),
-            'description' => request('description')
-        ]);
+        Project::create($request->validated());//devuelve los input validados en rules de SaveProjectRequest así no hay ninguna inyección de valores malintencionados.
 
         return redirect()->route('projects.index');
     }
@@ -44,17 +41,15 @@ class ProjectController extends Controller
         ]);
     }
     
-    public function update(){
+    public function update(Project $project){
 
-        Project::create([
+        $project->update([
             'title' => request('title'),
-            'url' => request('url'),
-            'description' => request('description')
+            'description' => request('description'),
+            'url' => request('url')
         ]);
 
-        //minuto 1:58
-
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.show', $project);
     }
 
 

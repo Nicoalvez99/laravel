@@ -19,7 +19,7 @@
             <label for="txtUrl">URL</label>
             <input type="text" name="url" class="form-control" id="" value="{{ old('url', $project->url) }}">
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 </div>
 

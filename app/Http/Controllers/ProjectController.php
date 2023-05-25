@@ -27,10 +27,14 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store(SaveProjectRequest $request){
+    public function store(Project $project){
         
-        Project::create( $request->validated() );//devuelve los input validados en rules de SaveProjectRequest así no hay ninguna inyección de valores malintencionados.
-
+        //Project::create( $request->validated() );//devuelve los input validados en rules de SaveProjectRequest así no hay ninguna inyección de valores malintencionados.
+        $project->create([
+            'title' => request('title'),
+            'description' => request('description'),
+            'url' => request('url')
+        ]);
         return redirect()->route('projects.index')->with('status', 'Proyecto creado exitosamente.');
     }
 
